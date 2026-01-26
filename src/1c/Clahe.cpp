@@ -1,0 +1,27 @@
+#include "Clahe.h"
+
+// OpenCV
+#include <opencv2/core.hpp>
+#include <opencv2/imgproc.hpp>
+
+namespace clahe {
+
+std::vector<uint8_t> apply(const std::vector<uint8_t>& img_u8,
+                           int width, int height,
+                           int tile_x, int tile_y,
+                           double clip_limit)
+{
+    cv::Mat in(height, width, CV_8UC1, (void*)img_u8.data());
+    cv::Mat out;
+
+    cv::Ptr<cv::CLAHE> c = cv::createCLAHE();
+    c->setClipLimit(clip_limit);
+    c->setTilesGridSize(cv::Size(tile_x, tile_y));
+    c->apply(in, out);
+
+    std::vector<uint8_t> result((size_t)width * height);
+    std::memcpy(result.data(), out.data, result.size());
+    return result;
+}
+
+} // namespace clahe
