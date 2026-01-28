@@ -3,6 +3,8 @@
 // OpenCV
 #include <opencv2/core.hpp>
 #include <opencv2/imgproc.hpp>
+#include <cstring>
+
 
 namespace clahe {
 
@@ -11,7 +13,11 @@ std::vector<uint8_t> apply(const std::vector<uint8_t>& img_u8,
                            int tile_x, int tile_y,
                            double clip_limit)
 {
-    cv::Mat in(height, width, CV_8UC1, (void*)img_u8.data());
+    if ((int)img_u8.size() != width * height) return {};
+
+    cv::Mat in(height, width, CV_8UC1);
+    std::memcpy(in.data, img_u8.data(), (size_t)width * height);
+
     cv::Mat out;
 
     cv::Ptr<cv::CLAHE> c = cv::createCLAHE();

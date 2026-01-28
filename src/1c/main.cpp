@@ -71,13 +71,13 @@ int main() {
     }
 
     // ---- Step 2 + 3 using CLAHE on Y ----
-    // Tune these two:
+    // Tune these two (hyperparams):
     // tiles: try 8x8, 12x8, 16x12 etc.
     // clip_limit: try 2.0, 3.0, 4.0
     {
         const int tiles_x = 8;
-        const int tiles_y = 8;
-        const double clip_limit = 3.0;
+        const int tiles_y = 6;
+        const double clip_limit = 3.5;
 
         auto Yp = clahe::apply(Y_u8, width, height, tiles_x, tiles_y, clip_limit);
 
