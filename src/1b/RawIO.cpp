@@ -1,3 +1,9 @@
+/*
+Name: Nikhil Ravichandran
+ID: 8515860149
+Email: nikhilr@usc.edu
+Date: February 1, 2026
+*/
 #include "RawIO.h"
 #include <fstream>
 #include <iostream>

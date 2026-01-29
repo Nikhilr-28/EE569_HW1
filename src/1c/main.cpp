@@ -1,3 +1,10 @@
+/*
+Name: Nikhil Ravichandran
+ID: 8515860149
+Email: nikhilr@usc.edu
+Date: February 1, 2026
+*/
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -75,9 +82,9 @@ int main() {
     // tiles: try 8x8, 12x8, 16x12 etc.
     // clip_limit: try 2.0, 3.0, 4.0
     {
-        const int tiles_x = 8;
-        const int tiles_y = 6;
-        const double clip_limit = 3.5;
+        const int tiles_x = 12;
+        const int tiles_y = 8;
+        const double clip_limit = 4;
 
         auto Yp = clahe::apply(Y_u8, width, height, tiles_x, tiles_y, clip_limit);
 
