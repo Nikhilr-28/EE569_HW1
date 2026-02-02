@@ -1,0 +1,17 @@
+Problem 3: Grey World AWB
+
+Input: A:\DIP\HW_1\EE569_HW1\images\sea.raw
+Size: 768 x 512
+
+Before AWB means: R=126.969, G=116.701, B=70.9956
+Target mean: 104.889
+Gains: alphaR=0.826094, alphaG=0.898781, alphaB=1.4774
+Clipping low/high: 0 / 3
+
+After AWB means: R=104.903, G=104.882, B=104.891
+
+Histogram CSVs:
+  A:\DIP\HW_1\EE569_HW1\images\3/hist_before.csv
+  A:\DIP\HW_1\EE569_HW1\images\3/hist_after.csv
+Output image:
+  A:\DIP\HW_1\EE569_HW1\images\3/sea_awb.raw
